@@ -4,24 +4,20 @@ quantity_list= {'apple': 5, 'orange':5, 'watermelon': 1, 'pineapple': 2, 'pear' 
 
 
 def total_cost_shopping():
-    totalcost=0
-    for key in quantity_list.keys():
-         if key in price_list.keys():
-             #totalcost=quantity_list[key]*price_list[key]
-             a=quantity_list[key]                                 #  first initialize the keys and then do the operation
-             b=price_list[key]
-             totalcost=a*b
-    print('the total cost is ', totalcost)
-    
-
-def cost_of_fruits(fruit, quantity):
     cost=0
-    if fruit in price_list and fruit in quantity_list:
-            cost=cost+(quantity*price_list[fruit])
-    print("cost of", quantity , fruit, '=', cost)
+    for key in price_list:
+        if key in quantity_list:
+            cost=cost+(price_list[key]*quantity_list[key])
+    print(cost)
     return cost
 
+def cost_of_fruits(fruit, quantity):
+    if fruit in price_list:
+        cost1=quantity*price_list[fruit]
+    print(cost1)
+    return cost1
 
+ 
 def main():
     cost_of_fruits('apple', 10)
     total_cost_shopping()
@@ -29,3 +25,33 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+''' totalcost=0
+    for key in quantity_list.keys():
+         if key in price_list.keys():
+             # totalcost=quantity_list[key]*price_list[key]
+             a=quantity_list[key]                                 #  first initialize the keys and then do the operation
+             b=price_list[key]
+             totalcost=a*b
+    print('the total cost is ', totalcost)'''
+    
+
+
+'''cost=0
+    if fruit in price_list and fruit in quantity_list:
+            cost=cost+(quantity*price_list[fruit])
+    print("cost of", quantity , fruit, '=', cost)
+    return cost'''
+
+
+
+
+
+
+
+
+
